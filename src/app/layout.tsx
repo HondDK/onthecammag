@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Header } from '@/widgets/layouts';
 
 const actayRegular = localFont({
   src: "./fonts/Actay-Regular.woff2",
@@ -38,11 +39,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body
-        className={`${actayRegular.variable} ${actayRegularItalic.variable} ${actayBold.variable} ${actayBoldItalic.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <body className={`${actayRegular.variable} ${actayRegularItalic.variable} ${actayBold.variable} ${actayBoldItalic.variable} antialiased`}>
+      <Header/>
+      {children}
+
+    </body>
     </html>
   );
 }
